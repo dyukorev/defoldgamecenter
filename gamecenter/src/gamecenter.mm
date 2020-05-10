@@ -103,6 +103,7 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
                 NSLog (@"Game Center: Error occurred authenticating-");
 				NSLog (@"  %@", [error localizedDescription]);
                 cbk->m_Error = new GKError([error code], [[error localizedDescription] UTF8String]);
+                fn(cbk);
             } else {
             	cbk->m_Error = new GKError(GKErrorUnknown, "Unknown");
             	fn(cbk);
